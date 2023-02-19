@@ -1,0 +1,16 @@
+.Link{
+    padding: 5px;
+    margin-left: 15px;
+    border-right: 2px solid rgb(33, 163, 255);
+    border-left: 2px solid rgb(33, 163, 255);
+    color:rgb(33, 163, 255) ;
+    text-decoration: none;
+    font-size: 23px;
+    transition: .3s;
+}
+.Link:hover{
+    /* background-color: rgb(255, 255, 255); */
+    border-right: 2px solid rgb(63, 63, 63);
+    border-left: 2px solid rgb(63, 63, 63);
+    color:rgb(63, 63, 63) ;
+}
