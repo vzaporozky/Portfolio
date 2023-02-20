@@ -6,8 +6,10 @@ import Linkto from "../Link/Link";
 const Navbar = () => {
     return(
         <div className={cl.navbar}>
-            <Linkto to="/">Start</Linkto>
+            <Linkto to="/">Home</Linkto>
             <Linkto to="/about">About</Linkto>
+            <Linkto to="/contacts">Contacts</Linkto>
+            <Linkto to="/colorgame">Colorgame</Linkto>
         </div>
     )
 }

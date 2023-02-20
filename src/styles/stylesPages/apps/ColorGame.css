@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+
+.color_game_title {
+    background-color: #5292ff;
+    text-align: center;
+    height: 200px;
+    padding: 20px 0px 40px 0px;
+    color: white;
+}
+.color_game_title span {
+    display: block;
+    font-size: 55px;
+}
+.color_game_stripe {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+.color_game_stipe_container {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.color_game_new_color {
+    border: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #ffffff;
+}
+.color_game_new_color:hover {
+    background-color: #5292ff;
+}
+.color_game_result {
+    margin: 7px;
+    text-align: center;
+    transition: 0.3s;
+}
+.color_game_select {
+    display: flex;
+}
+.color_game_complexity {
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 2px;
+}
+.color_game_complexity:hover {
+    background-color: rgb(82, 146, 255);
+    color: rgb(255, 255, 255);
+}
+.color_game_selected {
+    background-color: rgb(82, 146, 255);
+    color: rgb(255, 255, 255);
+}
+.color_game_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.color_game_main {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    width: 680px;
+}
+.color_game_color {
+    /* background-color: #ffe6e6; */
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    /* opacity: 0;
+    transition: opacity 1s ease-in-out; */
+}
+
+/* .show{
+  opacity: 1;
+} */

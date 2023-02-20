@@ -1,4 +1,8 @@
-@import "./About.css";
+@import "./null.css";
+@import "./stylesPages/About.css";
+@import "./stylesPages/Main.css";
+@import "./stylesPages/Contacts.css";
+@import "./stylesPages/apps/ColorGame.css";
 
 body{
     background-color: rgb(63, 63, 63);
