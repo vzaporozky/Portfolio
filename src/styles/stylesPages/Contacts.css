@@ -40,19 +40,19 @@ h1{
     margin-bottom: 30px;
 }
 
-li {
+.contacts ul li {
     padding: 10px; /* добавляем отступы внутри элементов списка */
     border-bottom: 1px solid #ccc; /* добавляем границу между элементами списка */
 }
-li a{
+.contacts ul li a{
     font-size: 17px;
     color: #ccc;
 }
-li a:hover{
+.contacts ul li a:hover{
     color: #fff;
     text-decoration: none;
 }
   
-li:last-child {
+.contacts ul li:last-child {
   border-bottom: none; 
 }

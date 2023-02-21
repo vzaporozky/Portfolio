@@ -3,8 +3,8 @@ import React from 'react';
 import './styles/App.css';
 import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import Navbar from "./components/UI/Navbar/Navbar.jsx";
-import About from "./pages/About.jsx";
 import MainPage from "./pages/MainPage.jsx";
+import About from "./pages/About.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import ColorGame from "./pages/apps/ColorGame.jsx";
 

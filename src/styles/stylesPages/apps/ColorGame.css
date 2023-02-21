@@ -62,21 +62,13 @@
 .color_game_main {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
-    width: 680px;
+    width: 630px;
 }
 .color_game_color {
-    /* background-color: #ffe6e6; */
     width: 200px;
     height: 200px;
     margin-bottom: 10px;
     margin-right: 10px;
     border-radius: 20px;
     transition: 0.3s;
-    /* opacity: 0;
-    transition: opacity 1s ease-in-out; */
 }
-
-/* .show{
-  opacity: 1;
-} */
