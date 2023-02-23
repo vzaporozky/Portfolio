@@ -40,10 +40,12 @@ const HangMan = () =>{
     const [hiddenWord, setHiddenWord] = useState('');
     const [wr, setWr] = useState('');
     const [play, setPlay] = useState('Play');
+    const [copyWord, setCopyWord] = useState('');
+    const [stickCount, setStickCount] = useState(9);
     
 
     let nextStick;
-    let stickCount = 9;
+    // let stickCount = 9;
     let indexArr, indexWord;
 
     function randomWord(){
@@ -97,16 +99,23 @@ const HangMan = () =>{
     const drawArray = [rightLeg, leftLeg, rightArm, leftArm,  
         torso,  head, frame4, frame3, frame2, frame1]; 
 
+    function clearCanvas(canvas) {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, 600, 600);
+    }
 
 
     function createHtmlGame(play){
         // context.clearRect(0, 0, 600, 600);
+        clearCanvas(canvasRef.current)
         setPlay(play)
-        stickCount = 9;
+        // stickCount = 9;
+        setStickCount(9)
         setCount(10)
         setWin(false)
         setLost(false)
         setWr(randomWord())
+        setCopyWord(wr[0]);
         setCategoryClue(wr[2])
         setClue('')
         setWord(wr[0]);
@@ -125,29 +134,71 @@ const HangMan = () =>{
     const createOnClick = () =>{createHtmlGame('Play Again')}
 
     const letterOnClick = (event) => {
-        let copyWord = wr[0];
         console.log(copyWord);
-        let copyWordDisplayed = hiddenWord.split(' ')
+        // let copyWordDisplayed = hiddenWord.split(' ')
 
-        if(!event.target.classList.contains('hangMan_selected')){
-            for(let i = 0; i < copyWord.length; i++){
-                let index = copyWord.indexOf(event.target.innerHTML);
-                if(index >= 0){
-                    event.target.classList.add('hangMan_selected');
-                    copyWordDisplayed[index] = copyWord[index];
-                    setHiddenWord(copyWordDisplayed.join(' '))
+        // if(!event.target.classList.contains('hangMan_selected')){
+        //     for(let i = 0; i < copyWord.length; i++){
+        //         let index = copyWord.indexOf(event.target.innerHTML);
+        //         if(index >= 0){
+        //             event.target.classList.add('hangMan_selected');
+        //             copyWordDisplayed[index] = copyWord[index];
+
+        //             let changeWorld = copyWord.split('');
+        //             changeWorld[index] = ' ';
+
+        //             setCopyWord(changeWorld.join(''))
+
+        //             index = copyWord.indexOf(event.target.innerHTML)
 
 
-                    if(copyWordDisplayed.indexOf('_') < 0){
-                        if(lost === false){
-                            setLives(true);
-                            setWin(true);
-                        }
+        //             setHiddenWord(copyWordDisplayed.join(' '))
+
+
+        //             if(copyWordDisplayed.indexOf('_') < 0){
+        //                 if(lost === false){
+        //                     setLives(true);
+        //                     setWin(true);
+        //                 }
+        //             }
+        //         }
+        //     } 
+        // }
+        function guessLetter(copyWordDisplayed) {
+            let index = copyWord.indexOf(event.target.innerHTML);
+            if (index >= 0) {
+              copyWordDisplayed[index] = copyWord[index];
+              let changeWorld = copyWord.split('');
+              changeWorld[index] = ' ';
+              setCopyWord(changeWorld.join(''))
+              setHiddenWord(copyWordDisplayed.join(' '))
+          
+                if (copyWordDisplayed.indexOf('_') < 0) {
+                    if (lost === false) {
+                        setLives(true);
+                        setWin(true);
                     }
-                    continue
                 }
-            } 
+          
+              // рекурсивный вызов
+              guessLetter(copyWordDisplayed);
+            }
+            
+                // return
         }
+          
+          // в основном коде
+        if (!event.target.classList.contains('hangMan_selected')) {
+            let copyWordDisplayed = hiddenWord.split(' ')
+            // let copyWord = copyWord;
+            
+            for (let i = 0; i < copyWord.length; i++) {
+                guessLetter(copyWordDisplayed);
+            }
+        }
+
+
+
         if(!event.target.classList.contains('hangMan_selected')){
             console.log(win, lost)
             if(win === true){
@@ -158,8 +209,10 @@ const HangMan = () =>{
                 event.target.classList.add('hangMan_selected')
                 setCount(count-1);
                 nextStick =  drawArray[stickCount];
+                // console.log(nextStick)
                 nextStick();
-                --stickCount;
+                setStickCount(stickCount-1)
+                // --stickCount;
             }else{
                 setLost(true);
                 nextStick =  drawArray[stickCount];
@@ -168,44 +221,19 @@ const HangMan = () =>{
         }
     }
 
-    const addAlphabet = () => {
-        const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-                'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-                't', 'u', 'v', 'w', 'x', 'y', 'z'];
-        alphabet.map(el => {
-            return(
-                <div 
-                    className={"hangMan_letter" + '' + (selectedClass && lives 
-                        ? 'selected':'')} 
-                    key={el}  
-                    onClick={letterOnClick}
-                    // onClick={addSelected}
-                    >
-                    {el}
-                </div>
-                // <div className="hangMan_letter">{el}</div>
-            )
-        })
-    }
-
     const Clue = () => {
         setClue(wr[1])
     }
 
-    // const playAgainOnClick = () => {
-        // context.clearRect(0, 0, 600, 600);
-    //     createHtmlGame()
-    // }
-
     useEffect(() => {
         setTimeout(() => {
-            createOnLoad();
+            try {
+                createOnLoad();
+            } catch (error) {
+                // console.log('ошибочка... нажмите "PLAY"');
+            }
         },100)
     }, []);
-
-    //   useEffect(() =>{
-    //     addAlphabet()
-    // }, [alphabet])
 
 
     return(
@@ -236,7 +264,7 @@ const HangMan = () =>{
 
             <div className="hangMan_word_main">
                 <h2 className="hangMan_category">{categoryClue}</h2>
-                <div className="hangMan_word">{hiddenWord}</div>
+                <div className="hangMan_word">{!hiddenWord ? "Press 'PLAY'":hiddenWord}</div>
             </div>
 
             <div className="hangMan_lives">
