@@ -3,6 +3,7 @@
 @import "./stylesPages/Main.css";
 @import "./stylesPages/Contacts.css";
 @import "./stylesPages/apps/ColorGame.css";
+@import "./stylesPages/apps/HangMan.css";
 
 body{
     background-color: rgb(63, 63, 63);

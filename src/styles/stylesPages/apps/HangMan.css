@@ -1,0 +1,102 @@
+@import url("https://fonts.hangMan_googleapis.hangMan_com/css2?family=Arvo&display=swap");
+
+.hangMan_main {
+  background-color: #77e600;
+  color: #ffffff;
+  font-family: "Arvo", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 94vh;
+  text-align: center;
+  align-items: center;
+}
+.hangMan_head {
+  margin-top: 25px;
+}
+.hangMan_head h1 {
+  margin-bottom: 5px;
+}
+.hangMan_head h2 {
+  margin-bottom: 10px;
+}
+.hangMan_letters {
+  margin-top: 20px;
+  height: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+.hangMan_letter {
+  width: 50px;
+  height: 50px;
+  padding: 9px;
+  margin: 0px 5px 5px 0px;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: #77e600;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.hangMan_letter:hover {
+  background-color: white;
+  color: #77e600;
+}
+.hangMan_selected {
+  background-color: #e4e4e4;
+  color: #77e600;
+  border: 2px solid #e4e4e4;
+  cursor: auto;
+}
+.hangMan_selected:hover {
+  background-color: #e4e4e4;
+  color: #77e600;
+}
+.hangMan_word_main {
+  margin-top: 40px;
+}
+.hangMan_word_main h2 {
+  margin-bottom: 10px;
+}
+.hangMan_lives {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.hangMan_lives_result {
+  font-size: 20px;
+}
+.hangMan_lives_result {
+  font-size: 20px;
+}
+.hangMan_clue {
+  font-size: 30px;
+}
+.hangMan_stick_man {
+  width: 450px;
+  height: 230px;
+  border: 2px dashed white;
+  margin-top: 20px;
+  padding: 15px;
+}
+.hangMan_buttons {
+  margin-top: 15px;
+}
+.hangMan_btn {
+  width: 170px;
+  height: 45px;
+  background-color: #77e600;
+  border: 1px solid white;
+  color: white;
+  margin-right: 7px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.hangMan_btn:hover {
+  background-color: white;
+  color: #77e600;
+}

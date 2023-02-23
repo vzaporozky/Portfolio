@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Link} from 'react-router-dom';
 import LinkToApp from '../components/UI/LinkToApp/LinkToApp'
 
@@ -20,6 +20,8 @@ const MainPage = () => {
                     img1='./images/ColorGame_1.png'
                     img2='./images/ColorGame_2.png'
                     img3='./images/ColorGame_3.png'
+                    description={['In this game you can find right color. If color its corect, this color will hide, and you will be looking for corect color', 
+                        'This game is needed to pass the time.']}
                 />
                 <LinkToApp 
                     to="/colorgame"
@@ -30,6 +32,8 @@ const MainPage = () => {
                     img1='./images/ColorGame_1.png'
                     img2='./images/ColorGame_2.png'
                     img3='./images/ColorGame_3.png'
+                    description={['In this game you can find right color. If color its corect, this color will hide, and you will be looking for corect color', 
+                        'This game is needed to pass the time.']}
                 />
                 <LinkToApp 
                     to="/colorgame"
@@ -40,7 +44,9 @@ const MainPage = () => {
                     img1='./images/ColorGame_1.png'
                     img2='./images/ColorGame_2.png'
                     img3='./images/ColorGame_3.png'
-                    toolTip = '1'
+                    description={['In this game you can find right color. If color its corect, this color will hide, and you will be looking for corect color', 
+                        'This game is needed to pass the time.']}
+                    toolTip = 'left'
                 />
                 
             </div>
