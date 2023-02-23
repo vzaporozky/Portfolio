@@ -1,4 +1,4 @@
 # Portfolio
 
-npm instal 
+npm instal | 
 npm start 
