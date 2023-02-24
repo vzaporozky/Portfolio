@@ -17,10 +17,12 @@ const LinkToApp = (props) => {
         <Link to={props.to} className={classes.app} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div><img src={props.src} alt="" /></div>
             <div className={classes.text}>
-                <h3>Color Game</h3>
+                <h3>{props.nameApp}</h3>
             </div>
             {items && 
                 <ToolTip 
+                onMouseEnter={handleMouseLeave}
+                onMouseLeave={handleMouseLeave}
                     img1={props.img1}
                     img2={props.img2}
                     img3={props.img3}

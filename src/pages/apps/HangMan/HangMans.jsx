@@ -106,28 +106,26 @@ const HangMan = () =>{
 
 
     function createHtmlGame(play){
-        // context.clearRect(0, 0, 600, 600);
-        clearCanvas(canvasRef.current)
-        setPlay(play)
-        // stickCount = 9;
-        setStickCount(9)
-        setCount(10)
-        setWin(false)
-        setLost(false)
-        setWr(randomWord())
+        clearCanvas(canvasRef.current);
+        setPlay(play);
+        setStickCount(9);
+        setCount(10);
+        setWin(false);
+        setLost(false);
+        setWr(randomWord());
         setCopyWord(wr[0]);
-        setCategoryClue(wr[2])
-        setClue('')
+        setCategoryClue(wr[2]);
+        setClue('');
         setWord(wr[0]);
-        setHiddenWord('')
+        setHiddenWord('');
         setHiddenWord(displayWord(wr[0]));
 
-        setAlphabet([''])
+        setAlphabet(['']);
         setTimeout(() =>{
             setAlphabet(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
             'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
             't', 'u', 'v', 'w', 'x', 'y', 'z'])
-        })
+        });
     }
 
     const createOnLoad = () =>{createHtmlGame('Play')}
@@ -187,10 +185,8 @@ const HangMan = () =>{
                 // return
         }
           
-          // в основном коде
         if (!event.target.classList.contains('hangMan_selected')) {
             let copyWordDisplayed = hiddenWord.split(' ')
-            // let copyWord = copyWord;
             
             for (let i = 0; i < copyWord.length; i++) {
                 guessLetter(copyWordDisplayed);
@@ -209,10 +205,8 @@ const HangMan = () =>{
                 event.target.classList.add('hangMan_selected')
                 setCount(count-1);
                 nextStick =  drawArray[stickCount];
-                // console.log(nextStick)
                 nextStick();
                 setStickCount(stickCount-1)
-                // --stickCount;
             }else{
                 setLost(true);
                 nextStick =  drawArray[stickCount];
@@ -222,7 +216,7 @@ const HangMan = () =>{
     }
 
     const Clue = () => {
-        setClue(wr[1])
+        setClue(wr[1]);
     }
 
     useEffect(() => {
@@ -230,7 +224,7 @@ const HangMan = () =>{
             try {
                 createOnLoad();
             } catch (error) {
-                // console.log('ошибочка... нажмите "PLAY"');
+
             }
         },100)
     }, []);
@@ -245,7 +239,6 @@ const HangMan = () =>{
             </div>
 
             <div className="hangMan_letters" >
-                {/* {addAlphabet()} */}
                 {alphabet.map(el => {
                     return(
                         <div 
@@ -253,11 +246,9 @@ const HangMan = () =>{
                                 ? 'selected':'')} 
                             key={el}  
                             onClick={letterOnClick}
-                            // onClick={addSelected}
                             >
                             {el}
                         </div>
-                        // <div className="hangMan_letter">{el}</div>
                     )
                 })}
             </div>
@@ -282,7 +273,6 @@ const HangMan = () =>{
             <div className="hangMan_buttons">
                 <input type="button" value="Hint" className="hangMan_btn hangMan_hint" onClick={Clue}/>
                 <input type="button" value={play} className="hangMan_btn hangMan_playAgain" onClick={createOnClick}/>
-                {/* onClick={playAgainOnClick} */}
             </div>
         </div>
     )

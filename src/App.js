@@ -6,8 +6,8 @@ import Navbar from "./components/UI/Navbar/Navbar.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import About from "./pages/About.jsx";
 import Contacts from "./pages/Contacts.jsx";
-import ColorGame from "./pages/apps/ColorGame.jsx";
-import HangMan from "./pages/apps/HangMans.jsx";
+import ColorGame from "./pages/apps/ColorGame/ColorGame.jsx";
+import HangMan from "./pages/apps/HangMan/HangMans.jsx";
 
 function App() {
   return (

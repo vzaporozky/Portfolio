@@ -1,0 +1,18 @@
+.container {
+    cursor:pointer;
+    padding-left:20px;
+  }
+  
+  .list{
+    display: none;
+    list-style:none;
+    margin:0;
+    padding-left:30px;
+    background:#ccc;
+    display:none;
+    }
+  
+  .selected{
+    display: block;
+  }
+    
