@@ -7,7 +7,9 @@ const About = () => {
         <div className={classes.about}>
             <h1>About</h1>
             <p>На этой странице вы можете найти все мои пет-проекты, которые я сделал на HTML, CSS, JavaScript и React</p>
-            <DropDownList />
+            <DropDownList 
+                
+            />
         </div>
     )
 }

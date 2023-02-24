@@ -9,7 +9,6 @@ const Navbar = () => {
             <Linkto to="/">Home</Linkto>
             <Linkto to="/about">About</Linkto>
             <Linkto to="/contacts">Contacts</Linkto>
-            <Linkto to="/HangMan">HangMan</Linkto>
         </div>
     )
 }
