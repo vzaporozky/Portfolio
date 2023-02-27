@@ -10,8 +10,8 @@ const ChatGPT = () =>{
     });
     const openai = new OpenAIApi(configuration);
     const [option, setOption] = useState(arrayItems[0].option);
-    const [result, setResult] = useState("");
     const [input, setInput] = useState("");
+    const [result, setResult] = useState([{writer: "user", value:'hello'}, {writer: 'bot', value:'hi'}]);
 
     // const selectOption = (option) => {
     //     setOption(option);
@@ -37,7 +37,9 @@ const ChatGPT = () =>{
                 DO YOU STUFF!
             </button>
 
-            <h3 className={classes.result_text}>{result.length > 0 ? result : ""}</h3>
+            <h3 className={classes.result_text}>{result.length > 0 ? result.map(el =>{
+                return <span>{el.value}</span>
+            }) : ""}</h3>
         </div>
     );
 }
