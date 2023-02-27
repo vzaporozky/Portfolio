@@ -38,10 +38,10 @@ const MainPage = () => {
                         'You can ask for a hint.','P.S. not finished...(']}
                 />
                 <LinkToApp 
-                    nameApp='Tic Tac Toe'
-                    to="/Tic_tac_toe"
+                    nameApp='ChatGPT'
+                    to="/ChatGPT"
                     table='2'
-                    firstTable={['html','CSS','JavaScript']}
+                    firstTable={['html','CSS','JavaScript', 'React']}
                     secondTable={['React(updated)']}
                     src='./images/ColorGame_main.png'
                     img1='./images/ColorGame_1.png'

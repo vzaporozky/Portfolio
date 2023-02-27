@@ -14,10 +14,17 @@ const Navbar = () => {
     return(
         <div className={cl.navbar}>
             <p style={{position:'absolute', left:0}}>Use only PS (Adaptive layout in progras...)</p>
-            <Linkto to="/">Home</Linkto>
-            <Linkto to="/about">About</Linkto>
-            <Linkto to="/contacts">Contacts</Linkto>
-            <button onClick={exitButton} className={cl.button}>Log Out</button>
+            {isAuth
+                ?
+                    <div className={cl.container}>
+                        <Linkto to="/">Home</Linkto>
+                        <Linkto to="/about">About</Linkto>
+                        <Linkto to="/contacts">Contacts</Linkto>
+                        <button onClick={exitButton} className={cl.button}>Log Out</button>
+                    </div>
+                :
+                    ''
+            }
         </div>
     )
 }

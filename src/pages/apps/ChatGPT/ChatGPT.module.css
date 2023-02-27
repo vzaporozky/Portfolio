@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    color: white;
+}
+.text_area{
+    background-color: black;
+    color: white;
+}
+
+.action_btn{
+    background-color: black;
+    color: white;
+
+}
+
+.result_text{
+
+}
