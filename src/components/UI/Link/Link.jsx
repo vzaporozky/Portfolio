@@ -4,7 +4,7 @@ import cl from './Link.module.css';
 
 const Linkto = (props) => {
     return (
-        <Link {...props} className={cl.Link}>
+        <Link {...props} className={props.theme === 'dark' ? cl.Link : cl.Link +' '+ cl.Link_light}>
             {props.children}
         </Link>
     )

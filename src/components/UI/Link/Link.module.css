@@ -15,3 +15,16 @@
     border-left: 2px solid rgb(255, 255, 255);
     color:rgb(0, 0, 0) ;
 }
+
+.Link_light{
+    border-right: 2px solid #000000;
+    border-left: 2px solid #000000;
+    color:#000000;
+}
+
+.Link_light:hover{
+    background-color: rgb(0, 0, 0);
+    border-right: 2px solid rgb(0, 0, 0);
+    border-left: 2px solid rgb(0, 0, 0);
+    color:rgb(255, 255, 255) ;
+}

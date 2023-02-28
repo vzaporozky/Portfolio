@@ -4,7 +4,7 @@ import cl from './Navbar.module.css';
 import Linkto from "../Link/Link";
 import { AuthContext } from "../../../context";
 
-const Navbar = () => {
+const Navbar = ({toggleTheme, theme}) => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
 
     const exitButton = () => {
@@ -12,15 +12,16 @@ const Navbar = () => {
         localStorage.removeItem('auth')
     }
     return(
-        <div className={cl.navbar}>
+        <div className={theme === 'dark' ? cl.navbar : cl.navbar + " " + cl.navbar_light}>
             <p style={{position:'absolute', left:0}}>Use only PS (Adaptive layout in progras...)</p>
             {isAuth
                 ?
                     <div className={cl.container}>
-                        <Linkto to="/">Home</Linkto>
-                        <Linkto to="/about">About</Linkto>
-                        <Linkto to="/contacts">Contacts</Linkto>
-                        <button onClick={exitButton} className={cl.button}>Log Out</button>
+                        <Linkto theme={theme} to="/">Home</Linkto>
+                        <Linkto theme={theme} to="/about">About</Linkto>
+                        <Linkto theme={theme} to="/contacts">Contacts</Linkto>
+                        <button className={theme === 'dark' ? cl.toggleTheme : cl.toggleTheme +' '+ cl.toggleTheme_light} onClick={toggleTheme}><img src="" alt="" /> <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" ><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+                        <button onClick={exitButton} className={theme === 'dark' ? cl.button :  cl.button + " " + cl.button_light}>Log Out</button>
                     </div>
                 :
                     ''

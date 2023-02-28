@@ -7,6 +7,10 @@
     border: 1px solid #000000;
     width: 100%;
 }
+.container_light{
+    background-color: rgb(185, 185, 185);
+    border: 1px solid #6f6f6f;
+}
 .block{
     display: flex;
 }

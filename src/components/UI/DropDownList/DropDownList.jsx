@@ -8,6 +8,7 @@ const DropDownList = (props) => {
     const changeState = () => {
         setState(!state)
         setHowToDo(false)
+        console.log(props.theme)
     }
     const changeHowToDo = (event) => {
         event.stopPropagation()
@@ -15,7 +16,7 @@ const DropDownList = (props) => {
     }
 
     return (
-        <div className={classes.container} onClick={changeState}>
+        <div className={props.theme === 'dark' ? classes.container : classes.container +' '+ classes.container_light} onClick={changeState}>
             <div className={classes.block}>
                 <img src={props.img} alt="" />
                 <h1>{props.name}</h1>
