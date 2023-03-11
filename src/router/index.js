@@ -6,7 +6,7 @@ import HangMan from "../pages/apps/HangMan/HangMan";
 import TicTacToe from "../pages/apps/TicTacToe/TicTacToe";
 import ToDoList from "../pages/apps/ToDoList/ToDoList";
 import ChatGPT from "../pages/apps/ChatGPT/ChatGPT";
-import MapGoogle from "../pages/apps/Map/Map.jsx";
+import MapGoogle from "../pages/apps/MapGoogle/MapGoogle.jsx";
 
 import Login from "../pages/Login/Login";
 
